@@ -34,7 +34,7 @@ namespace HamdyApp.Controllers
             {
                 db.Categories.Add(category);
                 db.SaveChanges();
-                TempData["Success"] = "Category Created Successfully!";
+                TempData["Success"] = $"Category {category.Name} Created Successfully!";
                 return RedirectToAction("Index");
             }
             return View();
@@ -63,7 +63,7 @@ namespace HamdyApp.Controllers
             {
                 db.Categories.Update(category);
                 db.SaveChanges();
-                TempData["Success"] = "Category Updated Successfully!";
+                TempData["Success"] = $"Category {category.Name} Updated Successfully!";
                 return RedirectToAction("Index");
             }
             return View();
@@ -91,7 +91,7 @@ namespace HamdyApp.Controllers
             }
             db.Categories.Remove(categoryFromDb);
             db.SaveChanges();
-            TempData["Success"] = "Category Deleted Successfully!";
+            TempData["Success"] = $"Category {categoryFromDb.Name} Deleted Successfully!";
             return RedirectToAction("Index");
         }
     }
